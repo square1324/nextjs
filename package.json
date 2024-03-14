@@ -1,0 +1,13 @@
+{
+  "name": "nextjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "basic": "yarn workspace basic"
+  }
+}
