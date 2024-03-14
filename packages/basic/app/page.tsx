@@ -1,5 +1,10 @@
+import Navigation from "@components/navigation";
+
 const Page = () => {
-    return <text>Hello NextJs</text>
+    return <div>
+        <Navigation/>
+        <h1>Hello!</h1>
+    </div>
 }
 
 export default Page

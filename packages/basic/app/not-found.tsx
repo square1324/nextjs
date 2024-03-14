@@ -1,10 +1,8 @@
 import Navigation from "@components/navigation";
 
-const AboutUs = () => {
+export default function NotFound() {
     return <div>
         <Navigation/>
-        <h1>About Us!</h1>
+        <h1>Not found!</h1>
     </div>
 }
-
-export default AboutUs
