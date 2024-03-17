@@ -1,10 +1,22 @@
+import MovieVideos from "@components/movie-videos";
+import MovieInfo from "@components/movie-info";
+import {Suspense} from "react";
+
+
 interface Props {
     params: {id: string }
     searchParams: { [key in string]: string }
 }
 
-const MovieDetail = ({params: {id}, searchParams}: Props) => {
-    return <h1>{`Movie:${id}`}</h1>
+const MovieDetail = async ({params: {id}, searchParams}: Props) => {
+    return <div>
+        <Suspense fallback={<h1>Loading movie info</h1>}>
+            <MovieInfo id={id} />
+        </Suspense>
+        <Suspense fallback={<h1>Loading movie videos</h1>}>
+            <MovieVideos id={id} />
+        </Suspense>
+    </div>
 }
 
 export default MovieDetail
