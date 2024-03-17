@@ -1,4 +1,3 @@
-import {movieUrl} from "../../../(home)/movie";
 import MovieVideos from "@components/movie-videos";
 import MovieInfo from "@components/movie-info";
 import {Suspense} from "react";
