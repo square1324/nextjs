@@ -1,6 +1,6 @@
-import MovieVideos from "@components/movie-videos";
-import MovieInfo from "@components/movie-info";
-import {Suspense} from "react";
+import {Suspense} from "react"
+import MovieVideos from "@components/movie-videos"
+import MovieInfo from "@components/movie-info"
 
 
 interface Props {
