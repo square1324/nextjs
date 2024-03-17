@@ -1,4 +1,7 @@
 import {movieUrl} from "../../../(home)/movie";
+import MovieVideos from "@components/movie-videos";
+import MovieInfo from "@components/movie-info";
+import {Suspense} from "react";
 
 
 interface Props {
@@ -6,20 +9,15 @@ interface Props {
     searchParams: { [key in string]: string }
 }
 
-async function getMovie(id: string) {
-    const response = await fetch(`${movieUrl}/${id}`).then(res => res.json())
-    return response
-}
-
-async function getVideos(id: string) {
-    const response = await fetch(`${movieUrl}/${id}/videos`).then(res => res.json())
-    return response
-}
-
-
 const MovieDetail = async ({params: {id}, searchParams}: Props) => {
-    const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)])
-    return <h1>{movie.title}</h1>
+    return <div>
+        <Suspense fallback={<h1>Loading movie info</h1>}>
+            <MovieInfo id={id} />
+        </Suspense>
+        <Suspense fallback={<h1>Loading movie videos</h1>}>
+            <MovieVideos id={id} />
+        </Suspense>
+    </div>
 }
 
 export default MovieDetail
