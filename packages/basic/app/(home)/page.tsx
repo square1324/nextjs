@@ -1,18 +1,17 @@
 import {Metadata} from "next";
+import Link from "next/link";
+import {movieUrl} from "./movie"
 
 export const metadata: Metadata = {
     title: "Home"
 }
 
-const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
-
 async function getMovies() {
-    await new Promise(resolve => setTimeout(() => resolve(null), 10000))
-    return fetch(URL).then(res => res.json())
+    return fetch(movieUrl).then(res => res.json())
 }
 
 const Page = async () => {
     const movies = await getMovies()
-    return <div>{JSON.stringify(movies)}</div>
+    return <div>{movies.map(movie => <li key={movie.id}><Link href={`/movies/${movie.id}`}>{movie.title}</Link></li>)}</div>
 }
 export default Page
