@@ -6,9 +6,14 @@
   "author": "",
   "license": "MIT",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "basic": "yarn workspace basic",
     "style": "yarn workspace style"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
   }
 }
