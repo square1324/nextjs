@@ -1,4 +1,7 @@
+import classNames from "classnames/bind";
 import variables from "./page.module.scss";
+
+const cx = classNames.bind(variables);
 
 export default function Page() {
   return (
